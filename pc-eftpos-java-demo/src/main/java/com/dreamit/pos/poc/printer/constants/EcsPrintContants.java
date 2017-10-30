@@ -1,4 +1,4 @@
-package com.dreamit.pos.poc.printer.print;
+package com.dreamit.pos.poc.printer.constants;
 
 /**
  * Created by ssun on 30/10/17.
