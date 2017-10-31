@@ -17,6 +17,10 @@ public class EcsPrintJob {
 		printLines.addAll(textLines);
 	}
 
+	public void addLine(EcsPrintLine ecsPrintLine){
+		this.printLines.add(ecsPrintLine);
+	}
+
 	public List<EcsPrintLine> getPrintLines() {
 		return printLines;
 	}

@@ -3,7 +3,6 @@ package com.dreamit.pos.poc.printer.print.job;
 import com.dreamit.pos.poc.printer.constants.EcsPrintContants;
 import com.dreamit.pos.poc.printer.constants.LineAlignment;
 import com.dreamit.pos.poc.printer.port.PrinterPort;
-import org.w3c.dom.Element;
 
 /**
  * Created by sherman_sun on 30/10/17.
