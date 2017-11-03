@@ -44,4 +44,8 @@ public class PropertiesReader {
 	public static void setProperties(Properties properties) {
 		PropertiesReader.properties = properties;
 	}
+
+	public static void myFirstFunctiobn(String str) {
+		// There is some difficult
+	}
 }

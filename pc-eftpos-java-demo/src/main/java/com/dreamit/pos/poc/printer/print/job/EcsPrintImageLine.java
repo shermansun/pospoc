@@ -6,6 +6,7 @@ import com.dreamit.pos.poc.printer.port.PrinterPort;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -19,6 +20,10 @@ public class EcsPrintImageLine extends EcsPrintLine{
 
 	public EcsPrintImageLine(InputStream inputStream) throws IOException {
 		loadImage(inputStream);
+	}
+
+	public EcsPrintImageLine(File file) throws IOException {
+		loadImage(file);
 	}
 
 	@Override
@@ -64,6 +69,10 @@ public class EcsPrintImageLine extends EcsPrintLine{
 
 		image = ImageIO.read(inputStream);
 
+	}
+
+	private void loadImage(File file) throws IOException {
+		image = ImageIO.read(file);
 	}
 
 	private byte[] collectSlice(int y, int x, int[][] img) {

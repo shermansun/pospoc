@@ -1,5 +1,7 @@
 package com.dreamit.pos.poc.printer.ui.listener;
 
+import com.dreamit.pos.poc.printer.ui.PrintGui;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.datatransfer.DataFlavor;
@@ -16,9 +18,13 @@ public class FileDnDListener implements DropTargetListener {
     JLabel imageLabel = new JLabel();
     JLabel pathLabel = new JLabel();
 
-    public FileDnDListener(JLabel imageLabel, JLabel pathLabel){
+    PrintGui printGui;
+
+    public FileDnDListener(JLabel imageLabel, JLabel pathLabel, PrintGui printGui){
         this.imageLabel = imageLabel;
         this.pathLabel = pathLabel;
+        this.printGui = printGui;
+
     }
 
     @Override
@@ -57,6 +63,7 @@ public class FileDnDListener implements DropTargetListener {
                     //files.forEach(f -> displayImage(f));
 
                     for (File f : files){
+                        printGui.setImage(f);
                         displayImage(f);
                     }
 
