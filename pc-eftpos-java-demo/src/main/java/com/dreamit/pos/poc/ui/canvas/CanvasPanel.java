@@ -47,10 +47,10 @@ public class CanvasPanel extends JPanel {
         CanvasShape shape = null;
         switch (tableShape){
             case ROUND:
-                shape = new RoundTable(tableId, 100, 100, 50, 50, Color.BLUE);
+                shape = new RoundTable(tableId, 100, 100, 100, 100, Color.BLUE);
                 break;
             case RECTANGLE:
-                shape = new RectangularTable(tableId, 200, 200, 50, 50, Color.CYAN);
+                shape = new RectangularTable(tableId, 200, 200, 100, 100, Color.MAGENTA);
                 break;
         }
         System.out.println(tableId);
@@ -79,10 +79,19 @@ public class CanvasPanel extends JPanel {
         shapes.stream().forEach(s -> {
             g2d.setColor(s.getColor());
             g2d.fill(s);
+
             if (selectedTableId == s.id){
                 g2d.setColor(Color.BLACK);
                 g2d.draw(s);
             }
+            //g2d.drawRect();
+            int offset1 = 3;
+            int offset2 = 8;
+            int offset3 = 13;
+            int offset4 = 18;
+            int offsetY = 3;
+            g2d.setColor(Color.WHITE);
+            g2d.drawString(((Integer) s.id).toString() + "11A", (s.getBounds().x + s.getBounds().width/2) - offset4, (s.getBounds().y+s.getBounds().height/2)+offsetY);
             //g2d.draw(s);
 
 
