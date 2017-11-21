@@ -57,6 +57,11 @@ public class UsbPrinterPort implements PrinterPort {
 	}
 
 	@Override
+	public void initialize(String portName) {
+
+	}
+
+	@Override
 	public void cleanup() {
 
 		try{

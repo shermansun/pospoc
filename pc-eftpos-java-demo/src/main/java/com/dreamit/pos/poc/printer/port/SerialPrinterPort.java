@@ -3,6 +3,7 @@ package com.dreamit.pos.poc.printer.port;
 import com.dreamit.pos.poc.util.PropertiesReader;
 import jssc.SerialPort;
 import jssc.SerialPortException;
+import jssc.SerialPortList;
 
 
 /**
@@ -13,9 +14,19 @@ public class SerialPrinterPort implements PrinterPort{
 	private final static String DEFAULT_COM = "COM1";
 	private SerialPort serialPort;
 
-	public void initialize() {
+	public void initialize(){
+		initialize("COM1");
+	}
+
+	public void initialize(String portName) {
 		try {
-			serialPort = new SerialPort(getPort());
+
+			System.out.println("Number of port: " + SerialPortList.getPortNames().length);
+			for (String port:SerialPortList.getPortNames()){
+				System.out.println(port);
+			}
+
+			serialPort = new SerialPort(portName);
 			serialPort.openPort();
 			serialPort.setParams(SerialPort.BAUDRATE_9600,
 					SerialPort.DATABITS_8,
@@ -28,8 +39,8 @@ public class SerialPrinterPort implements PrinterPort{
 	}
 
 	private String getPort() {
-		PropertiesReader.loadProperties();
-		return PropertiesReader.getProperties().getProperty("printer.com", DEFAULT_COM);
+
+		return DEFAULT_COM;
 	}
 
 	public void cleanup() {

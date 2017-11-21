@@ -16,7 +16,7 @@ public class CanvasPanel extends JPanel {
 
     boolean isFirstTime = true;
     Rectangle area;
-    //boolean pressOut = false;
+
     private Dimension dim = new Dimension(1200, 800);
 
     public CanvasPanel(JPanel parent) {

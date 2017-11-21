@@ -10,9 +10,11 @@ public interface PrinterPort {
 	 */
 	void initialize();
 
-	/**
-	 * Clean up port before executing print job.
-	 */
+	void initialize(String portName);
+
+		/**
+         * Clean up port before executing print job.
+         */
 	void cleanup();
 
 	/**

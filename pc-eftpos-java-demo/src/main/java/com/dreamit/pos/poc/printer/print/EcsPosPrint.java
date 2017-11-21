@@ -13,10 +13,10 @@ public class EcsPosPrint {
 
 	private PrinterPort printerPort = new SerialPrinterPort();
 
-	public void print(EcsPrintJob printJob){
+	public void print(String portName, EcsPrintJob printJob){
 
 		try{
-			printerPort.initialize();
+			printerPort.initialize(portName);
 			printerPort.writeBytes(EcsPrintContants.INIT_PRINTER);
 
 			for (EcsPrintLine printLine : printJob.getPrintLines()){

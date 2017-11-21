@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -86,7 +87,7 @@ public class PrintGui {
                     if (printLine instanceof EcsPrintTextLine){
 
                         EcsPrintTextLine textLine = (EcsPrintTextLine) printLine;
-                        List<String> commands = List.of(command.split(","));
+                        List<String> commands = Arrays.asList(command.split(","));
 
                         commands.stream().filter(c -> c.contains("f-")).forEach(c ->
                                 textLine.setFont(c.split("-")[1]));
@@ -112,7 +113,7 @@ public class PrintGui {
         }
 
         EcsPosPrint ecsPosPrint = new EcsPosPrint();
-        //ecsPosPrint.print(ecsPrintJob);
+        ecsPosPrint.print("COM1", ecsPrintJob);
     }
 
 
