@@ -53,6 +53,26 @@ public class SerialPrinterPort implements PrinterPort{
 		}
 	}
 
+	public int writeString(String str){
+		try {
+			serialPort.writeString(str);
+
+			return str.getBytes().length;
+		} catch (SerialPortException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public void writeByte(byte inbyte){
+
+		try {
+			serialPort.writeByte(inbyte);
+		} catch (SerialPortException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public int writeBytes(byte[] bytes) {
 		try {
 			serialPort.writeBytes(bytes);

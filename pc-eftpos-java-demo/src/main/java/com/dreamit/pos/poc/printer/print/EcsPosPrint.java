@@ -18,12 +18,14 @@ public class EcsPosPrint {
 		try{
 			printerPort.initialize(portName);
 			printerPort.writeBytes(EcsPrintContants.INIT_PRINTER);
+			printerPort.writeBytes(EcsPrintContants.CHINESE_MODE);
 
 			for (EcsPrintLine printLine : printJob.getPrintLines()){
 
 				printLine.print(printerPort);
 			}
 
+			printerPort.writeBytes(EcsPrintContants.CANCEL_CHINESE_MODE);
 			printerPort.writeBytes(EcsPrintContants.LINE_FEED);
 			printerPort.writeBytes(EcsPrintContants.LINE_FEED);
 			printerPort.writeBytes(EcsPrintContants.LINE_FEED);

@@ -13,15 +13,18 @@ import javax.print.attribute.HashPrintServiceAttributeSet;
 import javax.print.attribute.standard.PrinterName;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class Print {
 
 
     public static void main(String... arg){
 
-        processTextInput(arg[0],"a-CENTER,bold:Testing ABC\nhave a look at this text");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("printword", Locale.CHINESE);
+        System.out.println(resourceBundle.getObject("printline"));
 
-
+        processTextInput(arg[0],"a-CENTER,bold:" +resourceBundle.getObject("printline"));
 
     }
 

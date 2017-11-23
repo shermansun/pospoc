@@ -7,6 +7,7 @@ public class EcsPrintContants {
 
 	public final static char ESC_CHAR = 0x1B;
 	public final static char GS = 0x1D;
+	public final static char FS = 0x1C;
 	public final static byte[] LINE_FEED = new byte[]{0x0A};
 	public final static byte[] CUT_PAPER = new byte[]{GS, 0x56, 0x00};
 	public final static byte[] INIT_PRINTER = new byte[]{ESC_CHAR, 0x40};
@@ -25,6 +26,9 @@ public class EcsPrintContants {
 	public final static byte[] SET_LINE_SPACE_24 = new byte[]{ESC_CHAR, 0x33, 24};
 	public final static byte[] SET_LINE_SPACE_30 = new byte[]{ESC_CHAR, 0x33, 30};
 	public final static byte FONT_POINT = 0x11;
+	public final static byte[] CHINESE_MODE = new byte[]{FS, 0x26};
+	public final static byte[] CANCEL_CHINESE_MODE = new byte[]{FS, 0x2E};
+
 	public final static String DEFAULT_TYPE = "SERIAL", SERIAL_TYPE = "SERIAL", USB_TYPE = "USB";
 	public final static String[] PRINTER = {"ESC/POS Epson Printers"};
 
